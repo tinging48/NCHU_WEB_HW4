@@ -1,0 +1,146 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="UTF-8">
+<title>電影資訊區</title> 
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script> 
+ 
+<style type="text/css">
+h1 {background-color : rgb(300, 200, 500);margin-top:30px;	margin-bottom:30px;
+	padding-top:10px; padding-left:10px; padding-right:10px; padding-bottom:10px;}
+div {background-color:rgb(210, 230, 280); margin-left:20px;	margin-bottom:20px;}
+h2 {color : rgb(30%, 60%, 10%)}
+.more { padding : 3px; border : 1px solid black; width : 200px; } 
+.more-options { font-size : 12pt; } 
+.adj {color : blue;}
+</style>
+ 
+<script language="JavaScript">
+$(document).ready(function() { 
+	$('div.more').hide(); 
+	$('a.more-options').click(function() { 
+		if ($('div.more').is(':hidden')) 
+		$('div.more').slideDown('slow');
+		else 
+		$('div.more').slideUp('slow'); 
+		return false;
+	 }); 
+}); 
+
+
+$(document).ready(function() { 
+	$('p.more2').hide();
+	$('a.short2').hide();
+	$('a.more2').click(function() { 
+		$('p.more2').show(); 
+		$(this).hide(); 
+		$('a.short2').show(); 
+		return false; 
+	}); 
+	$('a.short2').click(function() { 
+		$('p.more2').hide('500');  
+		$(this).hide(); 
+		return false; 
+	}); 
+	$('a.tog2').click(function() {
+		var p = $('p.more2');  
+		p.toggle('slow'); 
+		if ($(this).text() == '詳細內容') 
+		$(this).text('隱藏內容'); 
+		else 
+		$(this).text('詳細內容'); 
+		return false; 
+	}); 
+}); 
+
+
+$(document).ready(function() { 
+	$('p.more3').hide(); 
+	$('a.short3').hide(); 
+	$('a.more3').click(function() { 
+		$('p.more3').fadeIn('1500'); 
+		$(this).hide(); 
+		$('a.short3').show();
+		return false; 
+	});
+	$('a.short3').click(function() { 
+		$('p.more3').fadeOut('1500'); 
+		$(this).hide(); 
+		return false; 
+	}); 
+	$('a.tog3').click(function() { 
+		$('p.more3').fadeToggle('1500'); 
+		return false; 
+	});
+ });
+
+ 
+$(document).ready(function() {
+	$('#login form').hide();
+	$('#open').click(function() { 
+	$('#login form').slideToggle('300'); 
+	}); 
+}); 
+
+
+$(document).ready(function() { 
+	$('p.adj').click(function () { 
+		$('h2').fadeTo("slow", Math.random()); 
+	}); 
+}); 
+
+</script> 
+</head> 
+<body> 
+<h1>電影資訊區</h1>
+<div id="search"> 
+<h2>【電影查詢】</h2>
+<input type="text" width="50"/> 
+<input type="submit" value="搜尋"/>
+<br/> 
+<a href="#" class="more-options">篩選搜尋</a>
+	<div class="more">
+	<input type="radio" name="category"/>即將上映<br/>
+	<input type="radio" name="category"/>現正熱映<br/>
+	<input type="radio" name="category"/>即將下檔<br/> 
+	</div> 
+</div> 
+
+<div>
+<h2>【本周新片】</h2>
+<h3 style="color:red;">玩命關頭8</h3>
+<p>演　　員：
+《瘋狂麥斯：憤怒道》莎莉賽隆、《自殺突擊隊》史考特伊斯威特、巨石強森、傑森史塔森、馮迪索、寇特羅素、蜜雪兒羅卓奎茲</p> 
+<p class="more2">上映日期：2017-04-12<br><br>類　　型：動作、冒險、劇情<br><br>
+劇情簡介：2015年上映的《玩命關頭7》成為影史中少數最快突破全球票房10億美元的賣座鉅片，並且成為全球影史票房排行榜第六名，台灣影史票房第三名，這個廣受全球觀眾歡迎和喜愛的電影系列即將推出全新作品《玩命關頭8》。<br>
+故事描述這個全球趴趴走的團隊在大戰後似乎終於能夠回歸正常平靜的生活：唐老大和莉蒂正在二度蜜月，布萊恩和蜜雅則退出江湖，而所有的成員的犯罪紀錄也全獲撤銷，但是當一名神秘女子（金獎影后莎莉賽隆 飾）將唐老大誘入一個他似乎無法逃脫的犯罪世界，而他也被迫背叛他最親近的家人，他們全都必須面對前所未有的挑戰，並且接受最嚴峻的考驗。
+</p> 
+<a href="#" class="more2">詳細內容</a> 
+<a href="#" class="short2">隱藏內容</a> 
+<a href="#" class="tog2">開啟/關閉</a>
+
+<h2>【電影排行榜】</h2>
+<h3>台北票房榜</h3>
+1我和我的冠軍女兒<br>2寶貝老闆<br>3美女與野獸<br>4攻殼機動隊<br>5目擊者<br>
+<p class="more3">6電影版聲之形<br>7辦公室大狂殺<br>8藍色小精靈：失落的藍藍村<br>9金剛：骷髏島<br>10一念無明</p>
+<a href="#" class="more3">更多內容</a> 
+<a href="#" class="short3">隱藏內容</a> 
+<a href="#" class="tog3">前五名/前十名</a>
+</div> 
+
+<div id="login">
+<h2>【為影片評分】</h2>
+<h3>請登入後才能使用此功能</h3>
+<p id="open" style="font-style: italic;">>>我要登入(請點擊)</p> 
+<form>
+<p> 使用者帳號: <input type="text" id="username"/> </p> 
+<p> 使用者密碼: <input type="text" id="password"/> </p> 
+<p> <input type="submit" id="button" value="登入"/> </p> 
+</form> 
+</div> 
+
+<p class="adj"><input type="submit" id="button" value="調整小標題顏色"/> </p>
+
+</body> 
+
+</html>
